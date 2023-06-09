@@ -1,5 +1,10 @@
+import { TimeTable } from "./timeTable/templates";
 function App() {
-  return <p>hello world!</p>;
+  return (
+    <>
+      <TimeTable />
+    </>
+  );
 }
 
 export default App;
