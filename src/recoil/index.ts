@@ -1,15 +1,11 @@
 import { atom } from "recoil";
 
-export const startTimeAtom = atom({
+export const timeAtom = atom<string[]>({
   key: "startTimeAtom",
-  default: 22, // 기본값을 설정한다 (default는 = 기본값)
-});
-export const endTimeAtom = atom({
-  key: "startTimeAtom",
-  default: 8, // 기본값을 설정한다 (default는 = 기본값)
+  default: [], // 기본값을 설정한다 (default는 = 기본값)
 });
 
-export const dateAtom = atom({
+export const dateAtom = atom<string[]>({
   key: "dateAtom",
   default: ["6/1", "6/2", "6/3", "6/4"], // 기본값을 설정한다 (default는 = 기본값)
 });
