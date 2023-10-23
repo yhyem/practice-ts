@@ -1,4 +1,4 @@
-import { DateColumn, TimeColumn } from "../molecules";
+import { BlockColumn, DateColumn, TimeColumn } from "../molecules";
 import { useRecoilState } from "recoil";
 import { useEffect } from "react";
 import { dateAtom, timeAtom } from "../../recoil";
@@ -36,7 +36,7 @@ export const TimeGrid = (props: { start: string; end: string }) => {
 
   return (
     <>
-      {timeList.map((time: string, index: number) => (
+      {timeList.map((time, index) => (
         <TimeColumn time={time} key={index} />
       ))}
     </>
@@ -49,6 +49,17 @@ export const DateGrid = () => {
     <>
       {DateList.map((date: string, index: number) => (
         <DateColumn date={date} key={index} />
+      ))}
+    </>
+  );
+};
+
+export const BlockGrid = () => {
+  const [timeList, setTimeList] = useRecoilState(timeAtom);
+  return (
+    <>
+      {timeList.map((time: string, index: number) => (
+        <BlockColumn time={time} key={index} />
       ))}
     </>
   );

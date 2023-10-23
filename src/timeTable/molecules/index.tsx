@@ -1,4 +1,5 @@
-import { Time, Date } from "../atoms";
+import { Time, Date, GridBlock } from "../atoms";
+import { styled } from "styled-components";
 
 export const DateColumn = (props: { date: string }) => {
   return (
@@ -15,3 +16,17 @@ export const TimeColumn = (props: { time: string }) => {
     </>
   );
 };
+
+export const BlockColumn = (props: { time: string }) => {
+  return (
+    <WrapGridBlock>
+      <GridBlock time={props.time} />
+    </WrapGridBlock>
+  );
+};
+
+const WrapGridBlock = styled.div`
+  display: grid;
+  grid-template-columns: 50px;
+  grid-template-rows: 50px;
+`;
