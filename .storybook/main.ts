@@ -1,25 +1,24 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+module.exports = {
+  stories: ["../src/components/**/*.stories.js"],
+  staticDirs: ["../public"],
 
-const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
-    "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
   ],
+
+  features: {
+    postcss: false,
+  },
+
   framework: {
     name: "@storybook/react-webpack5",
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
+    options: {}
   },
+
   docs: {
-    autodocs: "tag",
-  },
-  staticDirs: ["../public"],
+    autodocs: true
+  }
 };
-export default config;
