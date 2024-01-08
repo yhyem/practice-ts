@@ -1,3 +1,5 @@
+import "./test.css";
+
 const KakaoLogin = () => {
   const Rest_api_key = process.env.REACT_APP_KAKAO_API_KEY; //REST API KEY
   const redirect_uri = process.env.REACT_APP_REDICRECT_URI;
@@ -11,6 +13,8 @@ const KakaoLogin = () => {
 
   return (
     <>
+      <div>Me & You = Us</div>
+
       <button onClick={handleLogin}>카카오 로그인</button>
     </>
   );
